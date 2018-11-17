@@ -2,6 +2,7 @@
     "name": "PhotoSryber",
     "version": "1.0",
     "description": "Our piece of trash hackathon project",
+    "permissions": ["contextMenus"],
     "background":{
         "scripts":["background.js"],
         "persistant": false
