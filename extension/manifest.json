@@ -3,10 +3,9 @@
   "version": "1.0",
   "description": "Our cool hackathon project",
   "manifest_version": 2,
-  "app": {
-    "background": {
-      "scripts": ["background.js"]
-    }
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
   },
   "permissions": ["contextMenus"],
   "icons": {
