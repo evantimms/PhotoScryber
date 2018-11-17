@@ -8,8 +8,10 @@ RUN SERVER:
 '''
 
 from flask import Flask, request
+from flask_cors import CORS
 import json
 app = Flask(__name__)
+CORS(app)
 
 
 # GET/POST ROUTE
@@ -20,8 +22,8 @@ def parse_request():
     if request.method == 'GET':
         return "Hello"
     elif request.method == 'POST':
-        print(request.json)
-        return json.dumps(request.json)
+        print(request.json.get('url'))
+        return json.dumps(request.json.get('url'))
 
 
 
