@@ -3,10 +3,14 @@ chrome.runtime.onInstalled.addListener(function() {
     
 
     chrome.contextMenus.create({
-        id: "myid",
-        title: "cool",
-        contexts: ["all"]
-    }, console.log("contextmenu created"));
+        id: "id_photoscrybe",
+        title: "Photoscrybe this!",
+        contexts: ["image"]
+    });
+
+    chrome.contextMenus.onClicked.addListener(function(info) {
+        console.log("srcUrl " + info.srcUrl);
+    })
   });
 
   /* ------------- */
