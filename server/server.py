@@ -3,19 +3,16 @@ SETUP:
 
 pip3 install flask
 
+RUN SERVER:
+
 '''
 
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 
-# GET ROUTE
-@app.route("/")
-def hello():
-    return "Hello World!"
-
-# POST ROUTE
-@app.route('/post/<int:post_id>')
-def show_post(post_id):
-    # show the post with the given id, the id is an integer
-    return 'This is my Post: %d' % post_id
+# GET/POST ROUTE
+@app.route('/', methods=['GET', 'POST'])
+def parse_request():
+    data = request.data  
+    
