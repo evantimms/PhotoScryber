@@ -1,8 +1,12 @@
-//Init Listener
-chrome.runtime.onInstalled.addListener(() =>{
-    console.log("Extension Installed with version: ");
-});
 
+chrome.runtime.onInstalled.addListener(function() {
+    console.log("Extension successfully installed");
+    
 
+    chrome.contextMenus.create({
+        id: "myid",
+        title: "cool",
+        contexts: ["all"]
+    }, console.log("contextmenu created"));
+  });
 
-//----------//
