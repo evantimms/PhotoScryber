@@ -6,5 +6,20 @@
         "scripts":["background.js"],
         "persistant": false
     },
-    "manifest_version": 2
+    "manifest_version": 2,
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/promo.png",
+        "32": "images/promo.png",
+        "48": "images/promo.png",
+        "128": "images/promo.png"
+      }
+    },
+    "icons": {
+      "16": "images/promo.png",
+      "32": "images/promo.png",
+      "48": "images/promo.png",
+      "128": "images/promo.png"
+    }
 }
