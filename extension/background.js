@@ -1,3 +1,4 @@
+
 chrome.runtime.onInstalled.addListener(function() {
     console.log("Extension successfully installed");
     
@@ -12,6 +13,4 @@ chrome.runtime.onInstalled.addListener(function() {
         console.log("srcUrl " + info.srcUrl);
     })
   });
-
-  /* ------------- */
 
