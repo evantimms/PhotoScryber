@@ -1,3 +1,4 @@
+
 chrome.runtime.onInstalled.addListener(function() {
     console.log("Extension successfully installed");
     
@@ -8,6 +9,4 @@ chrome.runtime.onInstalled.addListener(function() {
         contexts: ["all"]
     }, console.log("contextmenu created"));
   });
-
-  /* ------------- */
 
