@@ -1,22 +1,14 @@
 {
-    "name": "PhotoSryber",
+    "name": "PhotoScryber",
     "version": "1.0",
-    "description": "Our piece of trash hackathon project",
-    "permissions": ["contextMenus"],
-    "background":{
-        "scripts":["background.js"],
-        "persistant": false
-    },
+    "description": "Our cool hackathon project",
     "manifest_version": 2,
-    "page_action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "images/promo.png",
-        "32": "images/promo.png",
-        "48": "images/promo.png",
-        "128": "images/promo.png"
+    "app": {
+      "background": {
+        "scripts": ["main.js"]
       }
     },
+    "permissions": ["contextMenus"],
     "icons": {
       "16": "images/promo.png",
       "32": "images/promo.png",

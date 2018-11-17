@@ -1,6 +1,11 @@
 chrome.runtime.onInstalled.addListener(function() {
-    console.log("Installed extension");
-
+    chrome.contextMenus.create({
+        title: "mine",
+        type: 'radio',
+        id: "myid",
+        documentUrlPatterns: [ "chrome-extension://*/a.html"],
+        contexts: ['all']
+      });
     
   });
 
