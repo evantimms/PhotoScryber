@@ -1,5 +1,5 @@
 var SERVER_API = 'http://localhost:5000'
-var activeTab = null;
+var translation = null;
 
 chrome.runtime.onInstalled.addListener(function() {
   console.log('PhotoScryber successfully installed');
@@ -31,20 +31,17 @@ function postJSON(imgUrl, tab) {
       return response.json()
     })
     .then((data) => {
-      // chrome.tabs.sendMessage(tab.id, data, function(clickedEl) {
-      // });
-      chrome.tabs.sendMessage(tab.id, data);
+      translation = data;
     })
     .catch((e) => { console.error(e) } );
 }
 
-/*
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    //console.log(request);
     if (request === 'init')
-        sendResponse(temp_response);
+        sendResponse(translation);
 });
-*/
+
 
 /*
 function getPostJSON() {

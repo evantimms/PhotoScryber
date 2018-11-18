@@ -6,17 +6,13 @@
   "description": "Transcribelate an image from an url",
   "permissions": ["contextMenus"],
 
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
   "background":{
       "scripts":["background.js"],
       "persistent": false
   },
-
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
 
   "icons": {
     "16": "images/promo.png",

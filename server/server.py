@@ -20,11 +20,7 @@ CORS(app)
 def parse_request():
 
     if request.method == 'POST':
-<<<<<<< HEAD
-        
-=======
         print("receiving")
->>>>>>> 61d8014e984f241034cdce57f15281ac59d8723a
         url = request.json.get('url')
         raw_string =  OCR(url)
         print(raw_string)
