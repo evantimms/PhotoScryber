@@ -34,6 +34,6 @@ def parse_request():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    #app.run(debug=True, port=5000)
 
-    # app.run(host='192.168.244.123', debug=True)
+     app.run(host='192.168.244.123', debug=True)
