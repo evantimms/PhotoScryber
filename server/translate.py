@@ -1,9 +1,20 @@
-def translate(given_string):
-    print(given_string
+# Imports the Google Cloud client library
+from google.cloud import translate
 
+# Instantiates a client
+translate_client = translate.Client()
 
+# The text to translate
+text = 'Hello, world!'
+# The target language
+target = 'ru'
 
-testing = ["Hola", "Привет", "Bonjour", "Olá"]
+# Translates some text into Russian
+translation = translate_client.translate(
+    text,
+    target_language=target)
 
-for test in testing:
-    translate(test)
+print('Text: {}'.format(text))
+print('Translation: {}'.format(translation['translatedText']))
+
+# def translate(given_string):
