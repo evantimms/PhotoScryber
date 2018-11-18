@@ -18,6 +18,8 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 
 function postJSON(imgUrl, tab) {
   //console.log(imgUrl);
+  
+  chrome.browserAction.setBadgeText({text: '...'});
   return fetch(SERVER_API, {
       method: 'POST',
       headers: {
@@ -28,6 +30,7 @@ function postJSON(imgUrl, tab) {
       })
     })
     .then((response) => {
+      chrome.browserAction.setBadgeText({text: '!'});
       return response.json()
     })
     .then((data) => {
@@ -39,6 +42,8 @@ function postJSON(imgUrl, tab) {
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request === 'init')
+    chrome.browserAction.setBadgeText({text: ''});
+
         sendResponse(translation);
 });
 
