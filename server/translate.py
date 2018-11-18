@@ -12,5 +12,6 @@ def translate_text(text):
     translation = translate_client.translate(
         text,
         target_language=target)
-
+    print('----------')
+    print(translation)
     return translation['translatedText']
