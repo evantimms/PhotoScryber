@@ -2,6 +2,8 @@
 
 ## A HackEd Beta 2018 Project
 
+### Contributors: Evan Timms, Songhui Zhang, Mohammad Kebbi
+
 ### Introduction
 
 For the 2018 HackEd Beta hackathon we wanted to create a chrome extension that was both easy to use and forfilled a real world purpose. We decided on using Google Cloud's vision and translation APIs to create an extension that translated text on images in foreign languages. 
@@ -22,3 +24,4 @@ Google Cloud is a complicated beast. It required alot of research and surfing th
 
 - Support for more file types such as gifs and maybe even videos.
 - Embedding the translated text on the image
+
