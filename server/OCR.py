@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "key="
+API_KEY = "key=AIzaSyCQlFExqVbKWPyHqhqfFdJHk6ekVye9PPk"
 API_ENDPOINT ="https://vision.googleapis.com/v1/images:annotate?" + API_KEY
 
 def OCR(url):
@@ -23,13 +23,10 @@ def OCR(url):
             }
         ]
     }
-    print(API_ENDPOINT)
-    r = requests.post(API_ENDPOINT, json=request_obj)
-    print(r.json())
-    
-    data = {
-        'words': []
-        }
 
-    return data
+    r = requests.post(API_ENDPOINT, json=request_obj)
+    word_list = r.json()['responses'][0]['textAnnotations'][0]['description']
+    word_list
+
+    return word_list
 

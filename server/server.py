@@ -22,12 +22,13 @@ def parse_request():
      
     if request.method == 'POST':
         url = request.json.get('url')
-        data =  OCR(url)
-        
+        raw_string =  OCR(url)
+        print(raw_string)
+        translated_words = translate_text(raw_string)
 
 
-        print(data)
-        return jsonify(data)
+        print(translated_words)
+        return jsonify(translated_words)
 
 
 
