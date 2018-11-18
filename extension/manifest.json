@@ -15,9 +15,9 @@
   },
 
   "icons": {
-    "16": "images/promo.png",
-    "32": "images/promo.png",
-    "48": "images/promo.png",
-    "128": "images/promo.png"
+    "16": "images/eye.png",
+    "32": "images/eye.png",
+    "48": "images/eye.png",
+    "128": "images/eye.png"
   }
 }
