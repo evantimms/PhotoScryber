@@ -10,7 +10,7 @@ RUN SERVER:
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from OCR import OCR
-from translate import translate
+from translate import translate_text
 import json
 app = Flask(__name__)
 CORS(app)

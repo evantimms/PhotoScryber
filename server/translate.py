@@ -1,11 +1,10 @@
 # Imports the Google Cloud client library
 from google.cloud import translate
 
-def translate_text(given_string):
+def translate_text(text):
     # Instantiates a client
     translate_client = translate.Client()
-    # The text to translate
-    text = given_string
+
     # The target language
     target = 'en'
 
