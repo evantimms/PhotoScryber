@@ -1,7 +1,17 @@
 var SERVER_API = 'http://localhost:5000'
 
+chrome.runtime.onInstalled.addListener(function() {
+    console.log('PhotoScryber successfully installed');
+    
+    chrome.contextMenus.create({
+        id: 'id_photoscrybe_main',
+        title: 'Photoscrybe this',
+        contexts: ['image']
+    });
+});
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log(request);
+    //console.log(request);
     if (request === 'init')
         sendResponse(temp_response);
 });
@@ -22,7 +32,7 @@ function postJSON(imgUrl) {
             return response.json()
         })
         .then((data)=>{
-            console.log(data);
+            //console.log(data);
         })
         .catch((e) => console.error(e))
     );
