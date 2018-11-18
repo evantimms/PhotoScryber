@@ -11,7 +11,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from OCR import OCR
 from translate import translate
-import json
 app = Flask(__name__)
 CORS(app)
 
@@ -29,7 +28,6 @@ def parse_request():
         print(data)
         return jsonify(data)
 
-    
 
 
 if __name__ == '__main__':
