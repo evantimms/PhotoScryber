@@ -20,6 +20,12 @@ function postJSON(imgUrl, tab) {
   //console.log(imgUrl);
   
   chrome.browserAction.setBadgeText({text: '...'});
+  chrome.browserAction.setIcon({
+    path : {
+      "19": "images/write.png",
+      "38": "images/write.png"
+    }
+  });
   return fetch(SERVER_API, {
       method: 'POST',
       headers: {
@@ -31,6 +37,12 @@ function postJSON(imgUrl, tab) {
     })
     .then((response) => {
       chrome.browserAction.setBadgeText({text: ''});
+      chrome.browserAction.setIcon({
+        path : {
+          "19": "images/eye.png",
+          "38": "images/eye.png"
+        }
+      });
       return response.json()
     })
     .then((data) => {
@@ -42,9 +54,10 @@ function postJSON(imgUrl, tab) {
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request === 'init')
-    chrome.browserAction.setBadgeText({text: ''});
+      sendResponse(translation);
 
-        sendResponse(translation);
+    chrome.browserAction.setBadgeText({text: ''});
+    
 });
 
 
