@@ -20,7 +20,11 @@ CORS(app)
 def parse_request():
 
     if request.method == 'POST':
+<<<<<<< HEAD
         
+=======
+        print("receiving")
+>>>>>>> 61d8014e984f241034cdce57f15281ac59d8723a
         url = request.json.get('url')
         raw_string =  OCR(url)
         print(raw_string)
@@ -29,3 +33,5 @@ def parse_request():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+    # app.run(host='192.168.244.123', debug=True)
