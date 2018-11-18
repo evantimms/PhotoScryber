@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    font-family: 'Roboto';
+    border: 2px black groove;
+    padding: 5px;
+}
+
+.output {
+    font-size: 16pt
+}
+
+.text{
+    padding: 5px 0;
+    text-align: center;
+}
