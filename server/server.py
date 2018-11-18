@@ -7,8 +7,10 @@ RUN SERVER:
 
 '''
 
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
+from OCR import OCR
+from translate import translate_text
 import json
 app = Flask(__name__)
 CORS(app)
@@ -18,14 +20,16 @@ CORS(app)
 @app.route('/', methods=['GET', 'POST'])
 def parse_request():
      
+    if request.method == 'POST':
+        url = request.json.get('url')
+        data =  OCR(url)
+        
+
+
+        print(data)
+        return jsonify(data)
+
     
-    if request.method == 'GET':
-        return "Hello"
-    elif request.method == 'POST':
-        print(request.json.get('url'))
-        return json.dumps(request.json.get('url'))
-
-
 
 
 if __name__ == '__main__':
