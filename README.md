@@ -1,3 +1,5 @@
+![alt-text](https://github.com/evantimms/PhotoScryber/edit/master/extension/images/write.png)
+
 # PhotoScryber
 
 ## A HackEd Beta 2018 Project
