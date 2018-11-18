@@ -1,4 +1,4 @@
-![alt-text](https://github.com/evantimms/PhotoScryber/edit/master/extension/images/write.png)
+![alt text](https://github.com/evantimms/PhotoScryber/blob/master/extension/images/write.png "Logo")
 
 # PhotoScryber
 
