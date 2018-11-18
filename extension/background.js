@@ -1,51 +1,59 @@
 var SERVER_API = 'http://localhost:5000'
+var activeTab = null;
 
 chrome.runtime.onInstalled.addListener(function() {
-    console.log('PhotoScryber successfully installed');
-    
-    chrome.contextMenus.create({
-        id: 'id_photoscrybe_main',
-        title: 'Photoscrybe this',
-        contexts: ['image']
-    });
+  console.log('PhotoScryber successfully installed');
+  
+  chrome.contextMenus.create({
+    id: 'id_photoscrybe_main',
+    title: 'Photoscrybe this',
+    contexts: ['image']
+  });
 });
 
+chrome.contextMenus.onClicked.addListener(function(info, tab) {
+  //console.log(info.srcUrl);
+  postJSON(info.srcUrl, tab);
+})
+
+function postJSON(imgUrl, tab) {
+  //console.log(imgUrl);
+  return fetch(SERVER_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        url: imgUrl
+      })
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      // chrome.tabs.sendMessage(tab.id, data, function(clickedEl) {
+      // });
+      chrome.tabs.sendMessage(tab.id, data);
+    })
+    .catch((e) => { console.error(e) } );
+}
+
+/*
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     //console.log(request);
     if (request === 'init')
         sendResponse(temp_response);
 });
+*/
 
-function postJSON(imgUrl) {
-    return new Promise(
-        fetch(SERVER_API, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'mode': 'no-cors'
-            },
-            body: JSON.stringify({
-                url: imgUrl
-            })
-        })
-        .then((response) =>{
-            return response.json()
-        })
-        .then((data)=>{
-            //console.log(data);
-        })
-        .catch((e) => console.error(e))
-    );
-}
-
+/*
 function getPostJSON() {
-    return new Promise(
-        fetch(SERVER_API)
+    return fetch(SERVER_API)
         .then(res => res.json())
-        .then(posts => console.log(posts))
-    );
+        .then(posts => console.log(posts));
 }
-
+*/
+/*
 var temp_response = {
     "responses": [
       {
@@ -216,3 +224,4 @@ var temp_response = {
       }
     ]
   }
+  */

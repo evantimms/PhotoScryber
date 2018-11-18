@@ -4,23 +4,6 @@ import base64
 API_KEY = "key=AIzaSyCQlFExqVbKWPyHqhqfFdJHk6ekVye9PPk"
 API_ENDPOINT ="https://vision.googleapis.com/v1/images:annotate?" + API_KEY
 
-def getRequestObject(url):
-    return {
-            "requests":[
-                {
-                "image":{
-                    "content": url
-                },
-                "features":[
-                    {
-                        "type":"TEXT_DETECTION",
-                        "maxResults":1
-                    }
-                ]
-                }
-            ]
-        }
-
 def OCR(url):
     if url[0:22] == "data:image/png;base64,":
         request_obj = {
@@ -40,7 +23,6 @@ def OCR(url):
         }
 
     elif url[0:23] == "data:image/jpeg;base64,":
-
         request_obj = {
             "requests":[
                 {
@@ -53,6 +35,7 @@ def OCR(url):
                         "maxResults":1
                     }
                 ]
+
                 }
             ]
         }
@@ -77,8 +60,6 @@ def OCR(url):
             ]
         }
 
-            
     r = requests.post(API_ENDPOINT, json=request_obj)    
 
     return r.json()['responses'][0]['textAnnotations'][0]['description']
-
