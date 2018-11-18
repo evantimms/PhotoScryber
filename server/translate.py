@@ -1,1 +1,2 @@
-def translate():
+def translate(string):
+    return string
