@@ -7,9 +7,9 @@ RUN SERVER:
 
 '''
 
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-from OCR import OCR, OCR_locations, OCR_string
+from OCR import OCR
 from translate import translate
 import json
 app = Flask(__name__)
@@ -22,13 +22,14 @@ def parse_request():
      
     if request.method == 'POST':
         url = request.json.get('url')
-        data =  OCR(url)  
+        data =  OCR(url)
+        
 
 
-    return {
-        "word_positions": data.positions,
-        "translated_word_string": translate(data.string)
-    }
+        print(data)
+        return jsonify(data)
+
+    
 
 
 if __name__ == '__main__':

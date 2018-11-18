@@ -1,11 +1,12 @@
 
 def OCR(url):
-    translated_string = positions = 0
+    
+    
+    data = {
+        'words': []
+        }
 
 
-    return {
-        "positions": positions,
-        "string": translated_string
-    }
+    return data
 
     
