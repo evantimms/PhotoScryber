@@ -15,22 +15,17 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-
 # GET/POST ROUTE
 @app.route('/', methods=['GET', 'POST'])
 def parse_request():
-     
+
     if request.method == 'POST':
+        
         url = request.json.get('url')
         raw_string =  OCR(url)
         print(raw_string)
         translated_words = translate_text(raw_string)
-
-
-        print(translated_words)
         return jsonify(translated_words)
-
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
