@@ -1,4 +1,4 @@
-var SERVER_API = 'http://localhost:5000'
+var SERVER_API = 'http://192.168.244.123:5000'
 var activeTab = null;
 
 chrome.runtime.onInstalled.addListener(function() {
