@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "key="
+API_KEY = "key=AIzaSyCQlFExqVbKWPyHqhqfFdJHk6ekVye9PPk"
 API_ENDPOINT ="https://vision.googleapis.com/v1/images:annotate?" + API_KEY
 
 def OCR(url):
